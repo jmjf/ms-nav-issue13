@@ -23,4 +23,27 @@ NAV
 			parent: 
 			breadcrumb_path: 
 		0
+		!FILE: subitem
+			name: subitem
+			path: subitem
+			type: dir
+			sort: 0
+			children: [object Object]
+			depth: 1
+			parent: 
+			breadcrumb_path: 
+		CHILD:
+				FILE: name: test.html | path: subitem/test.html | @root.nav_path: index.html | @root.path: 
+				NODE
+					name: test.html
+					path: subitem/test.html
+					type: file
+					sort: 0
+					children: 
+					file: [object Object]
+					depth: 2
+					parent: [object Object]
+					breadcrumb_path: [object Object]
+				0
+		END-CHILD
 END-NAV
