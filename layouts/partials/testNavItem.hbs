@@ -1,0 +1,24 @@
+{{#if file}}
+	FILE: name: {{name}} | path: {{path}} | @root.nav_path: {{@root.nav_path}} | @root.path: {{@root.path}}
+	NODE
+	{{#each this}}
+		{{@key}}: {{this}}
+	{{/each}}
+	{{this.children.length}}
+	FILE
+	{{#each file}}
+		{{@key}}: {{this}}
+	{{/each}}
+{{else}}
+	!FILE: {{name}}
+	{{#each this}}
+		{{@key}}: {{this}}
+	{{/each}}
+{{/if}}
+{{#if children}}
+	CHILD:
+	{{#each children}}
+		{{> testMenu}}
+	{{/each}}
+	END-CHILD
+{{/if}}
