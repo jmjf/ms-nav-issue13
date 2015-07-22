@@ -2,8 +2,7 @@ var metalsmith	= require('metalsmith'),
 	layouts		= require('metalsmith-layouts'),
 	markdown	= require('metalsmith-markdown'),
 	navigation 	= require('metalsmith-navigation'),
-	permalinks	= require('metalsmith-permalinks'),
-	regHelpers	= require('metalsmith-register-helpers');
+	permalinks	= require('metalsmith-permalinks');
 
 // Navigation plugin configuration
 var navConfigs = {
@@ -22,7 +21,7 @@ var navConfigs = {
 var siteBuild = metalsmith(__dirname)
 	// **** Pipeline Configuration ****
 	.source('./src')
-	.destination('./build')
+	.destination('./build-perma')
 
 	// **** Pipeline ****
 	// process markdown   
@@ -33,10 +32,6 @@ var siteBuild = metalsmith(__dirname)
 	}))
 	// process navigation tree
 	.use(navigation(navConfigs, navSettings))
-	//register Handlebars helpers
-	.use(regHelpers({
-		directory: "layouts/helpers"
-	}))
 	// process templates
 	.use(layouts({
 		engine: "handlebars",
