@@ -1,51 +1,34 @@
 NAV
-		FILE: name: index.html | path: index.html | @root.nav_path: index.html | @root.path: 
-		NODE
-			name: index.html
-			path: index.html
-			type: file
-			sort: 0
-			children: 
-			file: [object Object]
-			depth: 1
-			parent: 
-			breadcrumb_path: 
-		0
-		FILE: name: about | path: about | @root.nav_path: index.html | @root.path: 
-		NODE
-			name: about
-			path: about
-			type: dir
-			sort: 0
-			children: 
-			depth: 1
-			parent: 
-			breadcrumb_path: 
-			file: [object Object]
-			add_trailing: true
-		0
-		!FILE: subitem
-			name: subitem
-			path: subitem
-			type: dir
-			sort: 0
-			children: [object Object]
-			depth: 1
-			parent: 
-			breadcrumb_path: 
+	ITEM
+	root.navTitle: Home 
+	node.name: index.html
+	    this.nav_path:  | file.nav_path: index.html | root.nav_path: index.html
+	    this.path: index.html | file.path:  | root.path: 
 		CHILD:
-				FILE: name: test | path: subitem/test | @root.nav_path: index.html | @root.path: 
-				NODE
-					name: test
-					path: subitem/test
-					type: dir
-					sort: 0
-					children: 
-					depth: 2
-					parent: [object Object]
-					breadcrumb_path: [object Object]
-					file: [object Object]
-					add_trailing: true
-				0
 		END-CHILD
+	END-ITEM
+	ITEM
+	root.navTitle: Home 
+	node.name: about
+	    this.nav_path:  | file.nav_path: about/index.html | root.nav_path: index.html
+	    this.path: about | file.path: about | root.path: 
+		CHILD:
+		END-CHILD
+	END-ITEM
+	ITEM
+	root.navTitle: Home 
+	node.name: subitem
+	    this.nav_path:  | file.nav_path:  | root.nav_path: index.html
+	    this.path: subitem | file.path:  | root.path: 
+		CHILD:
+			ITEM
+			root.navTitle: Home 
+			node.name: test
+			    this.nav_path:  | file.nav_path: subitem/test/index.html | root.nav_path: index.html
+			    this.path: subitem/test | file.path: subitem/test | root.path: 
+				CHILD:
+				END-CHILD
+			END-ITEM
+		END-CHILD
+	END-ITEM
 END-NAV

@@ -1,20 +1,11 @@
-{{#if file}}
-	FILE: name: {{name}} | path: {{path}} | @root.nav_path: {{@root.nav_path}} | @root.path: {{@root.path}}
-	NODE
-	{{#each this}}
-		{{@key}}: {{this}}
-	{{/each}}
-	{{this.children.length}}
-{{else}}
-	!FILE: {{name}}
-	{{#each this}}
-		{{@key}}: {{this}}
-	{{/each}}
-{{/if}}
-{{#if children}}
+ITEM
+root.navTitle: {{@root.navTitle}} 
+node.name: {{name}}
+    this.nav_path: {{nav_path}} | file.nav_path: {{file.nav_path}} | root.nav_path: {{@root.nav_path}}
+    this.path: {{path}} | file.path: {{file.path}} | root.path: {{@root.path}}
 	CHILD:
 	{{#each children}}
 		{{> testNavItem}}
 	{{/each}}
 	END-CHILD
-{{/if}}
+END-ITEM
